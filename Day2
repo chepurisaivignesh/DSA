@@ -142,5 +142,9 @@ def threeSumClosest(self, A-->Array, B-->Target value):
                     else:
                         return B
         return ans
+####################################################
+Note:
+If the question is asked to find the number nearer and so forth or with lessthan or greater than equality use if once and then other if-elif-else statement like above problem not like tradaitional algo which is written in my notes.
+####################################################
 
 
