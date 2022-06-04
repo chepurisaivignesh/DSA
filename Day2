@@ -112,7 +112,6 @@ class Solution:
         l.sort()
         return l[k-1]
         
-        
-        
+One of the best resource for Two-Pointer Approach: https://towardsdatascience.com/two-pointer-approach-python-code-f3986b602640 and https://www.pluralsight.com/guides/algorithm-templates:-two-pointers-part-1
 
 
