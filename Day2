@@ -62,3 +62,34 @@ def mySqrt(self, x):
                 r = mid - 1
             else:
                 l = mid + 1
+Problem3:
+Given a characters array letters that is sorted in non-decreasing order and a character target, return the smallest character in the array that is larger than target.
+Note that the letters wrap around.
+For example, if target == 'z' and letters == ['a', 'b'], the answer is 'a'.
+Example 3-1:
+Input: letters = ["c","f","j"], target = "a"
+Output: "c"
+Example 3-2:
+Input: letters = ["c","f","j"], target = "c"
+Output: "f"
+Example 3-3:
+Input: letters = ["c","f","j"], target = "d"
+Output: "f"
+Solution3 (MySolution):
+def nextGreatestLetter(self,letters, target) -> str:
+        letters=list(set(letters))
+        letters.sort()
+        if target>=letters[-1] or target<letters[0]:
+            return letters[0]
+        left=0
+        right=len(letters)-1
+        while left<=right:
+            mid=(left+right)//2
+            if letters[mid]==target: 
+                return letters[mid+1]
+            elif letters[mid]<target:
+                left=mid+1
+            else:
+                right=mid-1
+        return letters[left]
+
