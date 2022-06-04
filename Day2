@@ -114,4 +114,33 @@ class Solution:
         
 One of the best resource for Two-Pointer Approach: https://towardsdatascience.com/two-pointer-approach-python-code-f3986b602640 and https://www.pluralsight.com/guides/algorithm-templates:-two-pointers-part-1
 
+Problem5:
+Given an array S of n integers, find three integers in S such that the sum is closest to a given number, target. 
+Return the sum of the three integers.
+Assume that there will only be one solution
+Example: 
+given array S = {-1 2 1 -4}, and target = 1.
+The sum that is closest to the target is 2. (-1 + 2 + 1 = 2)
+Solution5:
+def threeSumClosest(self, A-->Array, B-->Target value):
+        if len(A) < 3:
+            return B
+        if len(A) == 3:
+            return sum(A)
+        A.sort()
+        ans=sum(A[0:3])
+
+        for i in range(len(A) - 2):
+                l, r = i+1, len(A) - 1
+                while l < r:
+                    if abs(ans - B) > abs(A[i] + A[l] + A[r] - B):
+                        ans = A[i] + A[l] + A[r]
+                    if A[i] + A[l] + A[r] > B:
+                        r -= 1
+                    elif A[i] + A[l] + A[r] < B:
+                        l += 1
+                    else:
+                        return B
+        return ans
+
 
