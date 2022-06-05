@@ -104,11 +104,10 @@ def MissingNumber(self,array,n):
             return 1
         elif array[-1]!=n:
             return n
-        array.append(None)
         value=array[0]+1
         i=0
         while i<len(array):
-          if array[i+1]!=value or array[i+1]==None:
+          if array[i+1]!=value:
             return value
           else:
             i+=1
